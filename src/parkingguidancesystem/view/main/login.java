@@ -87,10 +87,6 @@ public class login {
         f.setVisible(true);
       
         b1.addActionListener((ActionEvent e) -> {
-            String username = t2.getText();
-            String pass = t3.getText();
-            UserLogin op = new UserLogin();
-            int role = op.Login(username,pass);
             UIManager.put("OptionPane.messageFont", new FontUIResource(
             new Font("Verdana", Font.PLAIN, 30) ) );
             UIManager.put("OptionPane.messageForeground", Color.white);
@@ -100,26 +96,35 @@ public class login {
             UIManager.put("OptionPane.background",new ColorUIResource(40, 51, 74));
             UIManager.put("Panel.background",new ColorUIResource(40, 51, 74));
             
+            String username = t2.getText();
+            String password = t3.getText();
             
-            switch(role){
-                case 1:
-                    admin n = new admin();
-                    n.a();
-                    f.setVisible(false);
-                    break;
-                case 3:
-                    exit_opretor ex = new exit_opretor();
-                    ex.exo();
-                    f.setVisible(false);
-                    break;
-                case 2:
-                    entry_opretor en = new entry_opretor();
-                    en.eno();
-                    f.setVisible(false);
-                    break;
-                default :
-                    JOptionPane.showMessageDialog(f,"Wrong username or password.","Alert",JOptionPane.WARNING_MESSAGE);
-            } 
+            if(username.matches("[0-9a-zA-Z]+")&&password.matches("[0-9a-zA-Z]+")){
+                UserLogin op = new UserLogin();
+                int role = op.Login(username,password);
+            
+                switch(role){
+                    case 1:
+                        admin n = new admin();
+                        n.a();
+                        f.setVisible(false);
+                        break;
+                    case 3:
+                        exit_opretor ex = new exit_opretor();
+                        ex.exo();
+                        f.setVisible(false);
+                        break;
+                    case 2:
+                        entry_opretor en = new entry_opretor();
+                        en.eno();
+                        f.setVisible(false);
+                        break;
+                    default :
+                        JOptionPane.showMessageDialog(f,"Wrong username or password.","Alert",JOptionPane.WARNING_MESSAGE);
+              }
+            }
+            else JOptionPane.showMessageDialog(f,"Wrong username or password.","Alert",JOptionPane.WARNING_MESSAGE);
+            
         });         
        
     

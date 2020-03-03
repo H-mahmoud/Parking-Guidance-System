@@ -7,7 +7,6 @@ public class AdminClass  extends UserLogin implements Parking{
     
     
     public boolean AddSpot (String SpotCode){
-        SpotCode = SpotCode.replaceAll("[^0-9a-zA-Z]", "");
         if(!SpotCode.isEmpty()&&SpotCode.length()<31){
             connection conn = new connection();
             int valid = conn.addSpot(SpotCode);
@@ -19,20 +18,16 @@ public class AdminClass  extends UserLogin implements Parking{
     }
     
     public boolean AddUser (String UserName , String Password, int RoleID, int shiftID){
-        UserName = UserName.replaceAll("[^0-9a-zA-Z]", "");
-        Password = Password.replaceAll("[^0-9a-zA-Z]", "");
-        if(!UserName.isEmpty()&&UserName.length()<12&&!Password.isEmpty()&&Password.length()<12&&shiftID > 0&&RoleID>0){
+        if(!UserName.isEmpty()&&!Password.isEmpty()&&shiftID > 0&&RoleID>0){
             connection conn = new connection();
             int valid = conn.addUser(UserName, Password, RoleID,shiftID);
             if(valid > 0)
                 return true;
-            
         }
         return false;
     }
     
     public boolean UpdateUser (String UserName  ,int roleId ){
-        UserName = UserName.replaceAll("[^0-9a-zA-Z]", "");
         
         if(!UserName.isEmpty()&&UserName.length()<50&&roleId > 0){
             connection conn = new connection();
@@ -45,7 +40,6 @@ public class AdminClass  extends UserLogin implements Parking{
     }
     
     public boolean DeleteUser( String UserName){
-        UserName = UserName.replaceAll("[^0-9a-zA-Z]", "");
         if(!UserName.isEmpty()&&UserName.length()<50){
             connection conn = new connection();
             int valid = conn.deleteUser(UserName);

@@ -11,7 +11,7 @@ public class Customer {
     public Ticket t;
     
     public Customer(String plateNumbre){
-        this.plateNumbre = plateNumbre.replaceAll("[^0-9a-zA-Z]", "");
+        this.plateNumbre = plateNumbre;
     }
     
     private String getSpot(){

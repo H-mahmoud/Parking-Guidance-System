@@ -67,8 +67,6 @@ public class add_spot {
         f.setVisible(true);
                 
         b1.addActionListener((ActionEvent e) -> {
-            String spotid = t1.getText();
-            AdminClass op = new AdminClass();
             UIManager.put("OptionPane.messageFont", new FontUIResource(
             new Font("Verdana", Font.PLAIN, 30) ) );
             UIManager.put("OptionPane.messageForeground", Color.white);
@@ -78,10 +76,17 @@ public class add_spot {
             UIManager.put("OptionPane.background",new ColorUIResource(40, 51, 74));
             UIManager.put("Panel.background",new ColorUIResource(40, 51, 74));
             
-            if(op.AddSpot(spotid))
-                JOptionPane.showMessageDialog(f,"Spot added successfuly.");
-            else
-                JOptionPane.showMessageDialog(f,"Operation faild","Alert",JOptionPane.WARNING_MESSAGE);
+            String spotid = t1.getText();
+            if(spotid.matches("[0-9a-zA-Z]+")){
+                AdminClass op = new AdminClass();
+            
+                if(op.AddSpot(spotid))
+                    JOptionPane.showMessageDialog(f,"Spot added successfuly.");
+                else
+                    JOptionPane.showMessageDialog(f,"Operation faild","Alert",JOptionPane.WARNING_MESSAGE);
+            }
+            else JOptionPane.showMessageDialog(f,"Spot Code must have numbers and charaters only.","Alert",JOptionPane.WARNING_MESSAGE);
+            
     });
         
         b2.addActionListener((ActionEvent e) -> {

@@ -72,10 +72,6 @@ public class update_user {
         f.add(b2);
         
         b1.addActionListener((ActionEvent e) -> {
-            String username = t1.getText();
-            int roleId = petList.getSelectedIndex()+1;
-            
-            AdminClass op = new AdminClass();
             UIManager.put("OptionPane.messageFont", new FontUIResource(
             new Font("Verdana", Font.PLAIN, 30) ) );
             UIManager.put("OptionPane.messageForeground", Color.white);
@@ -85,11 +81,17 @@ public class update_user {
             UIManager.put("OptionPane.background",new ColorUIResource(40, 51, 74));
             UIManager.put("Panel.background",new ColorUIResource(40, 51, 74));
             
+            String username = t1.getText();
+            int roleId = petList.getSelectedIndex()+1;
             
-            if(op.UpdateUser(username, roleId))
-                JOptionPane.showMessageDialog(f,"User updated successfuly.");
-            else
-                JOptionPane.showMessageDialog(f,"Operation faild.","Alert",JOptionPane.WARNING_MESSAGE);
+            if(username.matches("[0-9a-zA-Z]+")){
+                AdminClass op = new AdminClass();
+                if(op.UpdateUser(username, roleId))
+                    JOptionPane.showMessageDialog(f,"User updated successfuly.");
+                else
+                    JOptionPane.showMessageDialog(f,"Operation faild.","Alert",JOptionPane.WARNING_MESSAGE);
+            }
+            else JOptionPane.showMessageDialog(f,"Only numbers and characters are allowed.","Alert",JOptionPane.WARNING_MESSAGE);
         }); 
             
         b2.addActionListener((ActionEvent e) -> {

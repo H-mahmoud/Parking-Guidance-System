@@ -70,10 +70,7 @@ public class entry {
                 
         b1.addActionListener((ActionEvent e) -> {
             
-            String plateNum = t1.getText();
-            Customer op = new Customer(plateNum);
             
-            String result = op.printTicket();
             UIManager.put("OptionPane.messageFont", new FontUIResource(
             new Font("Verdana", Font.PLAIN, 30) ) );
             UIManager.put("OptionPane.messageForeground", Color.white);
@@ -83,8 +80,14 @@ public class entry {
             UIManager.put("OptionPane.background",new ColorUIResource(40, 51, 74));
             UIManager.put("Panel.background",new ColorUIResource(40, 51, 74));
             
+            String plateNum = t1.getText();
             
-            JOptionPane.showMessageDialog(f,result); 
+            if(plateNum.matches("[0-9a-zA-Z]+")){
+                Customer op = new Customer(plateNum);
+                String result = op.printTicket();
+                JOptionPane.showMessageDialog(f,result); 
+            }
+            else JOptionPane.showMessageDialog(f,"Wrong plate number format.","Alert",JOptionPane.WARNING_MESSAGE);
         }); 
          
         b2.addActionListener((ActionEvent e) -> {

@@ -94,7 +94,7 @@ public class shift_report {
                 table_shift_report nk=new table_shift_report();
                 nk.vsr(date1,shiftId);
             }
-            else JOptionPane.showMessageDialog(f,"Operation faild.","Alert",JOptionPane.WARNING_MESSAGE); ;
+            else JOptionPane.showMessageDialog(f,"Date must be in format yyyy-mm-dd.","Alert",JOptionPane.WARNING_MESSAGE); ;
         }); 
             
         b2.addActionListener((ActionEvent e) -> {

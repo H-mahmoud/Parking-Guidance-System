@@ -31,7 +31,7 @@ public class entry_opretor {
         b1.setText("Free Spots");
         b1.setBounds(460,350,350,80);
         b1.setFont(new Font("", Font.BOLD, 30));
-        b1.setBackground(new Color(34, 167, 240));
+        b1.setBackground(new Color(77, 136, 255));
         b1.setForeground(Color.white);
         
         b3.setText("Logout");

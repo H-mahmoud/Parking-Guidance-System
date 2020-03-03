@@ -81,7 +81,7 @@ public class parking_report {
                 table_parking_report nk=new table_parking_report();
                 nk.vpr(date);
             }
-            else JOptionPane.showMessageDialog(f,"Operation faild","Alert",JOptionPane.WARNING_MESSAGE); ;
+            else JOptionPane.showMessageDialog(f,"Date must be in format yyyy-mm-dd","Alert",JOptionPane.WARNING_MESSAGE); ;
         }); 
             
         b2.addActionListener((ActionEvent e) -> {
