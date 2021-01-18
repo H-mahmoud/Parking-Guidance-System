@@ -38,6 +38,6 @@ Parking Guidance System is one of the projects that I worked on during my colleg
 <img src="images/home.jpg">
 <img src="images/ticket.jpg">
 <img src="images/login.jpg">
-<img src="images/admin.jpg">
+<img src="images/profile.jpg">
 
 *  Check more here <a href="https://github.com/H-mahmoud/Parking-Guidance-System/images">**Here**</a>.
