@@ -1,5 +1,5 @@
 # Parking Guidance System 🅿🚗🚗🚗🚗
-Parking Guidance System is one of the projects that I worked on during my college studies. Parking system is smart enough to regulate traffic at any point of time in residencies, offices, shopping malls, hospitals and other public places, that will eventually save users time, efforts and resources.
+
 #
 ### It Consists of:-
 
